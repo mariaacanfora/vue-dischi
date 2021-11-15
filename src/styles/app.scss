@@ -1,0 +1,35 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import "variables.scss";
+@import "reset.scss";
+
+
+//HEADER
+.bg-header{
+    background-color: $bg-color-header;
+}
+
+header{
+
+    img{
+        height: 50px;
+    }
+}
+
+
+//MAIN
+.bg-main{
+    background-color: $bg-color-main;
+
+    h4{
+        font-size: 1.3rem;
+    }
+}
+
+.text-card{
+    color: $color-main;
+}
+
+.pb-card{
+    min-height: 385px;
+}
