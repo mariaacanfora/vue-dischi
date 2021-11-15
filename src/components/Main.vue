@@ -1,6 +1,6 @@
 <template>
   <main class="bg-main p-5">
-    <CardContainer></CardContainer>
+      <CardContainer></CardContainer>
   </main>
 </template>
 
