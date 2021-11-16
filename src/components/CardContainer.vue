@@ -36,7 +36,7 @@ export default {
   },
   methods:{
     onChoosedOption(option){
-      console.log(option);
+      //console.log(option);
       this.choosedGenre = option  
     }
   },
