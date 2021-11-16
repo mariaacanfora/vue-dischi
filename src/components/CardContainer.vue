@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="container text-center">
-      <Select :genresList="genresList"></Select>
+      <Select :genresList="genresList" @optionClick = "onChoosedOption"></Select>
       <div class="row row-cols-1 row-cols-md-5 gx-5 gy-4 py-5">
         <SingleCard
-          v-for="(cd, i) in cdList"
+          v-for="(cd, i) in genresFilteredList"
           :key="i"
           :author="cd.author"
           :title="cd.title"
@@ -31,7 +31,14 @@ export default {
     return {
       cdList: [],
       loading: true,
+      choosedGenre: "",
     };
+  },
+  methods:{
+    onChoosedOption(option){
+      console.log(option);
+      this.choosedGenre = option  
+    }
   },
   computed: {
     genresList () {
@@ -48,6 +55,16 @@ export default {
       })
       console.log(genreObj);
       return genreObj;
+    },  
+
+    genresFilteredList () {
+      if (!this.choosedGenre){
+        return this.cdList
+      }
+
+      return this.cdList.filter((cd) => {
+        return this.choosedGenre === cd.genre
+      })
     }
   },
   mounted() {

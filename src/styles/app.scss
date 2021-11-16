@@ -4,6 +4,11 @@
 @import "reset.scss";
 
 
+body{
+    background-color: $bg-color-main;
+}
+
+
 //HEADER
 .bg-header{
     background-color: $bg-color-header;
